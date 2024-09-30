@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+body{
+    padding: 20px;
+    font-size: sans-serif;
+}
+.game{
+    max-width: calc(3 * 100px);
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+.status{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* .board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+}
+.reset-button{
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+.cell{
+    height: 100px;
+    width: 100px;
+    font-size: 36px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.cell:hover{
+    background-color: #a6a3a7;
+} */
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.reset-button{
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cell {
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    font-size: 36px;
+    border: none; 
+    transition: background-color 0.3s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cell:nth-child(-n+3) { /* Top row cells */
+    border-bottom: 2px solid black;
 }
 
-.App-link {
-  color: #61dafb;
+.cell:nth-child(3n) { /* Right column cells */
+    border-left: 2px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cell:nth-child(3n+1) { /* Left column cells */
+    border-right: 2px solid black;
+}
+
+.cell:nth-child(n+7) { /* Bottom row cells */
+    border-top: 2px solid black;
+}
+
+.cell:hover {
+    background-color: #d9d8da;
 }
